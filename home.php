@@ -23,6 +23,7 @@
     <body>
         <main>
             <h1>Kezdőlap</h1>
+            <!--<img src="./kepek/02.jpg" alt="valami">-->
             <div>
 				<!--üdvözlés névvel-->
             </div>
