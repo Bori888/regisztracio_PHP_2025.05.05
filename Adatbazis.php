@@ -62,7 +62,11 @@
     	
     	public function get_nev($felhAzon){
     		//felhAzon alapján név visszaadása
+			$sql ="SELECT  `nev`FROM `felhasznalo` WHERE felhAzon = `$felhAzon`";
+			$result = $this->kapcsolat->query($sql);
+			$phpTomb =$result ->fetch_array();
 			//$result->fetch_array(MYSQLI_ASSOC);
+			return $phpTomb["nev"]
     	}
 		
 		public function adminE($felhAzon){

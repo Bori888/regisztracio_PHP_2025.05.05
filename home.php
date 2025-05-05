@@ -25,7 +25,7 @@
             <h1>Kezdőlap</h1>
             <!--<img src="./kepek/02.jpg" alt="valami">-->
             <div>
-				<!--üdvözlés névvel-->
+				<h2>Hello <?php echo $felh-> get_nem ($felhAzon);?>!</h2>
             </div>
 			<div>
 				<!--url-ben állapottartás: link a kijelentkezésre-->
