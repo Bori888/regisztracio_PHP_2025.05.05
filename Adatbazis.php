@@ -43,13 +43,26 @@
 		
 		public function bejelentkezes($emailNev, $jelszo){
 			//jelszó titkosítása
+			$titkosJelszo =md5($jelszo);
 			//lekérdezés: email vagy nev a megadott érték
+			$sql ="SELCT *
+					FROM `felhasznalo`
+					WHERE (`nev` = `$emailNev` OR `email`= `$emailNev`)
+					and jelszo ='$titkosJelszo'";
 			//ha már létezik, 
+			$result =$this->kapcsolat->query($sql);
+			if ($result->num_rows== 1) {
+				$_SESSION["login"]=true;
+				$phpTomb =$result->fetch_array();
+				$felhAzon =$phpTomb["felAzon"];
+				$_SESSION["felhAzon"]=$felhAzon;
+			}
 				//állítsuk be a login kulcsot a sessionben igazra,
 				//hozzuk létre a felhAzon kulcsú sessiont,
 					//segítség:  $result->fetch_array(MYSQLI_ASSOC);
 				//módosítsuk a bejelentkezést 1-re! térjünk vissza igazzal!
 			//különben hamissal térjünk vissza!
+
     	}
 
     	
