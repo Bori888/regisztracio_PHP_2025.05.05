@@ -41,9 +41,24 @@ if (isset($_GET['logout'])) {
             <h2>Hello <?php echo $felh->get_nev($felhAzon); ?>!</h2>
 
         </div>
+        <div class="kepek">
+            <?php
+            $kepek = glob("kepek/*.{jpg,jpeg,png,gif,webp}", GLOB_BRACE);
+            ?>
+
+            <div class="galeria">
+                <?php foreach ($kepek as $kep): ?>
+                    <img src="<?php echo $kep; ?>" alt="Kép" style="width:100px; height:auto;">
+
+                <?php endforeach; ?>
+            </div>
+
+        </div>
+
         <div>
             <a href="home.php?logout=true">Kijelentkezés</a>
         </div>
+
 
         <?php
         //ha admin a felh-ó, akkor megjelenítjük a bej-tt felh-kat
